@@ -21,7 +21,10 @@
 				</div>
 				{{ if .Site.Params.contact.form }}
 				<div class="col-md-6 to-animate">
-					<form name="contact" method="post" data-netlify="true">
+					<form name="contact" method="post" netlify-honeypot="gotcha" data-netlify="true">
+						<p class="hidden">
+							<label>Don’t fill this out if you’re human: <input name="gotcha" /></label>
+						</p>
 					<div class="form-group ">
 						{{ with .Site.Params.contact.name }}
 						<label for="name" class="sr-only">{{ . | markdownify }}</label>
